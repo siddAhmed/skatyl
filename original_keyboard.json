@@ -1,0 +1,75 @@
+{
+    "keyboard_name": "skatyl",
+    "manufacturer": "siddahmed",
+    "url": "",
+    "maintainer": "siddahmed",
+    "usb": {
+        "vid": "0x444D",
+        "pid": "0x3435",
+        "device_version": "0.0.1"
+    },
+    "processor": "RP2040",
+    "bootloader": "rp2040",
+    "diode_direction": "ROW2COL",
+    "features": {
+        "bootmagic": true,
+        "console": true,
+        "extrakey": true,
+        "tap_dance": true
+    },
+    "split": {
+        "enabled": true,
+        "bootmagic": {
+            "matrix": [0, 0]
+        }
+    },
+    "layouts": {
+        "LAYOUT": {
+            "layout": [
+                { "matrix": [ 0, 0 ], "label": "y", "x": 11.36, "y": 0 },
+                { "matrix": [ 0, 1 ], "label": "c", "x": 2.25, "y": 0 },
+                { "matrix": [ 0, 2 ], "label": "l", "x": 12.48, "y": 0.43000000000000005 },
+                { "matrix": [ 0, 3 ], "label": "m", "x": 1.13, "y": 0.43000000000000005 },
+                { "matrix": [ 0, 4 ], "label": "k", "x": 10.34, "y": 0.62 },
+
+                { "matrix": [ 4, 4 ], "label": "z", "x": 3.27, "y": 0.62 },
+                { "matrix": [ 4, 3 ], "label": "f", "x": 11.27, "y": 1.17 },
+                { "matrix": [ 4, 2 ], "label": "u", "x": 2.34, "y": 1.17 },
+                { "matrix": [ 4, 1 ], "label": ",", "x": 13.61, "y": 1.42 },
+                { "matrix": [ 4, 0 ], "label": "z", "x": 0, "y": 1.42 },
+
+                { "matrix": [ 1, 0 ], "label": "w", "x": 12.41, "y": 1.6 },
+                { "matrix": [ 1, 1 ], "label": "d", "x": 1.2, "y": 1.6 },
+                { "matrix": [ 1, 2 ], "label": "j", "x": 10.22, "y": 1.79 },
+                { "matrix": [ 1, 3 ], "label": "r", "x": 3.39, "y": 1.79 },
+                { "matrix": [ 1, 4 ], "label": "b", "x": 11.36, "y": 2.35 },
+
+                { "matrix": [ 5, 4 ], "label": "h", "x": 2.25, "y": 2.35 },
+                { "matrix": [ 5, 3 ], "label": "dance_3", "x": 13.57, "y": 2.59 },
+                { "matrix": [ 5, 2 ], "label": "dance_1", "x": 0.04, "y": 2.59 },
+                { "matrix": [ 5, 1 ], "label": "x", "x": 12.48, "y": 2.78 },
+                { "matrix": [ 5, 0 ], "label": "f", "x": 1.13, "y": 2.78 },
+
+                { "matrix": [ 2, 0 ], "label": "u", "x": 10.34, "y": 2.9699999999999998 },
+                { "matrix": [ 2, 1 ], "label": ",", "x": 3.27, "y": 2.9699999999999998 },
+                { "matrix": [ 2, 2 ], "label": "o", "x": 13.61, "y": 3.77 },
+                { "matrix": [ 2, 3 ], "label": "bspc", "x": 0, "y": 3.77 },
+                { "matrix": [ 2, 4 ], "label": "p", "x": 0, "y": 4.27 },
+
+                { "matrix": [ 6, 4 ], "label": "n", "x": 0, "y": 4.77 },
+                { "matrix": [ 6, 3 ], "label": "e", "x": 0, "y": 5.27 },
+                { "matrix": [ 6, 2 ], "label": "a", "x": 0, "y": 5.77 },
+                { "matrix": [ 6, 1 ], "label": "g", "x": 0, "y": 6.27 },
+                { "matrix": [ 6, 0 ], "label": "t", "x": 0, "y": 6.77 },
+
+                { "matrix": [ 3, 2 ], "label": "THUMB_SPACE", "x": 0, "y": 7.27 },
+                { "matrix": [ 3, 3 ], "label": "THUMB_LSFT", "x": 0, "y": 7.77 },
+                { "matrix": [ 3, 4 ], "label": "THUMB_RCTL", "x": 0, "y": 8.27 },
+
+                { "matrix": [ 7, 2 ], "label": "TO_LAYER_1", "x": 0, "y": 8.77 },
+                { "matrix": [ 7, 1 ], "label": "THUMB_5", "x": 0, "y": 9.27 },
+                { "matrix": [ 7, 0 ], "label": "THUMB_6", "x": 0, "y": 9.77 }
+            ]
+        }
+    }
+}
