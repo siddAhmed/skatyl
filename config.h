@@ -12,12 +12,12 @@
 // #define SERIAL_USART_TX_PIN GP13     // The GPIO pin that is used split communication.
 
 // #define DIODE_DIRECTION ROW2COL
-#define MATRIX_ROWS 10  // 5 rows per half (including number row)
+#define MATRIX_ROWS 8  // 4 rows per half
 #define MATRIX_COLS 10 // 5 columns per half
 
 /* Keyboard matrix assignments */
 // #define MATRIX_ROW_PINS {GP15, GP29, GP28, GP27, GP26}
-#define MATRIX_ROW_PINS {GP15, GP29, GP28, GP14, GP26}
+#define MATRIX_ROW_PINS {GP29, GP28, GP14, GP26}
 #define MATRIX_COL_PINS {GP2, GP3, GP4, GP5, GP6}
 
 /* Reset */
