@@ -45,8 +45,13 @@ jobs:
             lib/printf \
             lib/pico-sdk
 
-      - name: Install QMK Python dependencies
-        run: pip install -r qmk_firmware/requirements.txt
+      - name: Install QMK CLI and Python dependencies
+        run: |
+          pip install qmk
+          pip install -r qmk_firmware/requirements.txt
+
+      - name: Configure QMK home
+        run: qmk config user.qmk_home=$GITHUB_WORKSPACE/qmk_firmware
 
       - name: Copy keyboard into QMK
         run: |
@@ -57,10 +62,10 @@ jobs:
           cp -r keymaps    qmk_firmware/keyboards/skatyl/
 
       - name: Compile no_numrow
-        run: make -C qmk_firmware skatyl:no_numrow
+        run: qmk compile -kb skatyl -km no_numrow
 
       - name: Compile numrow
-        run: make -C qmk_firmware skatyl:numrow
+        run: qmk compile -kb skatyl -km numrow
 
       - name: Collect firmware files
         run: |
