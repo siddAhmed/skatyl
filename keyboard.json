@@ -21,7 +21,7 @@
         "soft_serial_pin": "GP13",
         "enabled": true,
         "bootmagic": {
-            "matrix": [0, 0]
+            "matrix": [4, 0]
         }
     },
     "layouts": {
