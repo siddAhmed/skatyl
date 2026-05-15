@@ -33,50 +33,58 @@ For this specific keyboard, the main files live here:
 > - `$HOME\qmk_firmware\keyboards\handwired\skatyl`
 > - `$HOME\qmk_firmware\keyboards\scatyl`
 
-## How to Compile
+## Entering Bootloader Mode
 
-1. Open QMK MSYS (either directly or in your Windows Terminal profile).
-2. Change directory to the root of your QMK firmware:
-   ```bash
-   cd ~/qmk_firmware
-   ```
-3. Run one of the following commands depending on the keymap you want to build:
-   ```bash
-   qmk compile -kb skatyl -km numrow
-   # or
-   qmk compile -kb skatyl -km no_numrow
-   # or
-   qmk compile -kb skatyl -km default
-   ```
+Before flashing either half, put it into bootloader mode so it appears as a USB drive called `RPI-RP2`.
 
-## How to Flash
+**Method 1 — Unplug method (easiest for bare boards):**
+1. Unplug the USB cable.
+2. Hold **BOOT**, plug USB back in, release BOOT.
 
-Before flashing, you must put the RP2040 Zero into bootloader mode (BOOTSEL mode) so it shows up as a USB drive (`RPI-RP2`) on your computer.
+**Method 2 — Two-button method (already plugged in):**
+1. Hold **BOOT**, press and release **RESET**, then release BOOT.
 
-### Entering Bootloader Mode
+---
 
-You can use either of the following methods using the tiny buttons on the board:
+## Building and Flashing
 
-**Method 1: The Plug-in Method (Easiest for bare boards)**
-1. Unplug the USB cable from the RP2040 Zero.
-2. Press and **hold down the BOOT button**.
-3. While continuing to hold the BOOT button, plug the USB cable back into your computer.
-4. Release the BOOT button.
+### Option A — Compile only
 
-**Method 2: The Two-Button Method (If already plugged in)**
-1. Press and **hold down the BOOT button**.
-2. While holding BOOT, quickly press and release the **RESET** button.
-3. Release the **BOOT** button.
+Produces a `skatyl_no_numrow.uf2` file in the `qmk_firmware` directory. Flash it manually afterward.
 
-### Flashing Commands
-
-Once in bootloader mode, run the following commands:
+Open QMK MSYS, `cd ~/qmk_firmware`, then run:
 
 ```bash
-qmk flash -kb skatyl -km no_numrow -bl uf2-split-right
-# and
-qmk flash -kb skatyl -km no_numrow -bl uf2-split-left
+qmk compile -kb skatyl -km no_numrow
 ```
 
-> **Flashing directly**  
-> You can directly run the flash command as it compiles the firmware first anyways.
+---
+
+### Option B — Compile, then flash
+
+Open QMK MSYS, `cd ~/qmk_firmware`, compile first, then put each half into bootloader mode and run:
+
+```bash
+qmk compile -kb skatyl -km no_numrow
+qmk flash -kb skatyl -km no_numrow -bl uf2-split-left   # flash left half
+qmk flash -kb skatyl -km no_numrow -bl uf2-split-right  # flash right half
+```
+
+---
+
+### Option C — Compile and flash in one step
+
+Compiles the firmware and immediately waits for you to put a half into bootloader mode. Run once per half.
+
+Open QMK MSYS, `cd ~/qmk_firmware`, then run:
+
+```bash
+qmk flash -kb skatyl -km no_numrow -bl uf2-split-left   # put left half into bootloader when prompted
+qmk flash -kb skatyl -km no_numrow -bl uf2-split-right  # put right half into bootloader when prompted
+```
+
+---
+
+### Option D — Flash a downloaded .uf2 (no build tools needed)
+
+Download `skatyl_no_numrow.uf2` from the [Releases page](https://github.com/siddAhmed/skatyl/releases/latest). Put one half into bootloader mode — it appears as `RPI-RP2`. Drag `skatyl_no_numrow.uf2` onto it, wait for it to reboot, then repeat for the other half. Both sides use the same file.
