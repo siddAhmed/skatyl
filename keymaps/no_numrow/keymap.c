@@ -73,7 +73,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   [3] = LAYOUT(
   //---------------------------------------------------------------------------------------       ----------------------------------------------------------------------------------
-    TD(DANCE_54),   KC_MS_WH_LEFT,  KC_MS_UP,       KC_MS_WH_RIGHT, TD(DANCE_55),           LGUI(KC_LBRC),  LCTL(LSFT(KC_TAB)),   RCTL(KC_TAB),         LGUI(KC_RBRC),  KC_TRNS,
+    TD(DANCE_54),   KC_MS_WH_LEFT,  KC_MS_UP,       KC_MS_WH_RIGHT, TD(DANCE_55),           KC_WBAK,        LCTL(LSFT(KC_TAB)),   RCTL(KC_TAB),         KC_WFWD,        KC_TRNS,
   //---------------------------------------------------------------------------------------       ----------------------------------------------------------------------------------
 	TD(DANCE_56),   KC_MS_LEFT,     KC_MS_DOWN,     KC_MS_RIGHT,    MT(MOD_LGUI,KC_DEL),    TD(DANCE_60),   MT(MOD_RGUI,KC_DOWN), MT(MOD_RALT,KC_UP),   TD(DANCE_63),   KC_ENTER,
   //---------------------------------------------------------------------------------------       ----------------------------------------------------------------------------------
@@ -425,7 +425,7 @@ void dance_54_finished(tap_dance_state_t *state, void *user_data) {
     dance_state.step = dance_54_dance_step(state);
     switch (dance_state.step) {
         case SINGLE_TAP: register_code16(KC_ESCAPE); break;
-        case SINGLE_HOLD: register_code16(LALT(LGUI(KC_ESCAPE))); break;
+        case SINGLE_HOLD: register_code16(LALT(KC_F4)); break;
         case DOUBLE_TAP: register_code16(KC_ESCAPE); register_code16(KC_ESCAPE); break;
         case DOUBLE_SINGLE_TAP: tap_code16(KC_ESCAPE); register_code16(KC_ESCAPE);
     }
@@ -435,7 +435,7 @@ void dance_54_reset(tap_dance_state_t *state, void *user_data) {
     wait_ms(10);
     switch (dance_state.step) {
         case SINGLE_TAP: unregister_code16(KC_ESCAPE); break;
-        case SINGLE_HOLD: unregister_code16(LALT(LGUI(KC_ESCAPE))); break;
+        case SINGLE_HOLD: unregister_code16(LALT(KC_F4)); break;
         case DOUBLE_TAP: unregister_code16(KC_ESCAPE); break;
         case DOUBLE_SINGLE_TAP: unregister_code16(KC_ESCAPE); break;
     }
@@ -519,7 +519,7 @@ void dance_56_finished(tap_dance_state_t *state, void *user_data) {
     dance_state.step = dance_56_dance_step(state);
     switch (dance_state.step) {
         case SINGLE_TAP: register_code16(KC_TAB); break;
-        case SINGLE_HOLD: register_code16(LGUI(KC_TAB)); break;
+        case SINGLE_HOLD: register_code16(LALT(KC_TAB)); break;
         case DOUBLE_TAP: register_code16(KC_TAB); register_code16(KC_TAB); break;
         case DOUBLE_SINGLE_TAP: tap_code16(KC_TAB); register_code16(KC_TAB);
     }
@@ -529,7 +529,7 @@ void dance_56_reset(tap_dance_state_t *state, void *user_data) {
     wait_ms(10);
     switch (dance_state.step) {
         case SINGLE_TAP: unregister_code16(KC_TAB); break;
-        case SINGLE_HOLD: unregister_code16(LGUI(KC_TAB)); break;
+        case SINGLE_HOLD: unregister_code16(LALT(KC_TAB)); break;
         case DOUBLE_TAP: unregister_code16(KC_TAB); break;
         case DOUBLE_SINGLE_TAP: unregister_code16(KC_TAB); break;
     }
@@ -566,7 +566,7 @@ void dance_58_finished(tap_dance_state_t *state, void *user_data) {
     dance_state.step = dance_58_dance_step(state);
     switch (dance_state.step) {
         case SINGLE_TAP: register_code16(KC_GRAVE); break;
-        case SINGLE_HOLD: register_code16(LGUI(KC_GRAVE)); break;
+        case SINGLE_HOLD: register_code16(LGUI(KC_TAB)); break;
         case DOUBLE_TAP: register_code16(KC_GRAVE); register_code16(KC_GRAVE); break;
         case DOUBLE_SINGLE_TAP: tap_code16(KC_GRAVE); register_code16(KC_GRAVE);
     }
@@ -576,7 +576,7 @@ void dance_58_reset(tap_dance_state_t *state, void *user_data) {
     wait_ms(10);
     switch (dance_state.step) {
         case SINGLE_TAP: unregister_code16(KC_GRAVE); break;
-        case SINGLE_HOLD: unregister_code16(LGUI(KC_GRAVE)); break;
+        case SINGLE_HOLD: unregister_code16(LGUI(KC_TAB)); break;
         case DOUBLE_TAP: unregister_code16(KC_GRAVE); break;
         case DOUBLE_SINGLE_TAP: unregister_code16(KC_GRAVE); break;
     }
