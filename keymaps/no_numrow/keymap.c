@@ -283,7 +283,7 @@ void dance_31_finished(tap_dance_state_t *state, void *user_data) {
     dance_state.step = dance_31_dance_step(state);
     switch (dance_state.step) {
         case SINGLE_TAP: register_code16(LSFT(KC_4)); break;
-        case SINGLE_HOLD: register_code16(LCTL(LGUI(LSFT(KC_4)))); break;
+        case SINGLE_HOLD: register_code16(LGUI(LSFT(KC_S))); break;
         case DOUBLE_TAP: register_code16(LSFT(KC_4)); register_code16(LSFT(KC_4)); break;
         case DOUBLE_SINGLE_TAP: tap_code16(LSFT(KC_4)); register_code16(LSFT(KC_4));
     }
@@ -293,7 +293,7 @@ void dance_31_reset(tap_dance_state_t *state, void *user_data) {
     wait_ms(10);
     switch (dance_state.step) {
         case SINGLE_TAP: unregister_code16(LSFT(KC_4)); break;
-        case SINGLE_HOLD: unregister_code16(LCTL(LGUI(LSFT(KC_4)))); break;
+        case SINGLE_HOLD: unregister_code16(LGUI(LSFT(KC_S))); break;
         case DOUBLE_TAP: unregister_code16(LSFT(KC_4)); break;
         case DOUBLE_SINGLE_TAP: unregister_code16(LSFT(KC_4)); break;
     }
@@ -331,7 +331,7 @@ void dance_32_finished(tap_dance_state_t *state, void *user_data) {
     dance_state.step = dance_32_dance_step(state);
     switch (dance_state.step) {
         case SINGLE_TAP: register_code16(KC_QUOTE); break;
-        case SINGLE_HOLD: register_code16(LGUI(KC_QUOTE)); break;
+        case SINGLE_HOLD: register_code16(LGUI(KC_PERIOD)); break;
         case DOUBLE_TAP: register_code16(KC_GRAVE); break;
         case DOUBLE_SINGLE_TAP: tap_code16(KC_QUOTE); register_code16(KC_QUOTE);
     }
@@ -341,7 +341,7 @@ void dance_32_reset(tap_dance_state_t *state, void *user_data) {
     wait_ms(10);
     switch (dance_state.step) {
         case SINGLE_TAP: unregister_code16(KC_QUOTE); break;
-        case SINGLE_HOLD: unregister_code16(LGUI(KC_QUOTE)); break;
+        case SINGLE_HOLD: unregister_code16(LGUI(KC_PERIOD)); break;
         case DOUBLE_TAP: unregister_code16(KC_GRAVE); break;
         case DOUBLE_SINGLE_TAP: unregister_code16(KC_QUOTE); break;
     }
