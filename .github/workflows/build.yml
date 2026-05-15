@@ -65,9 +65,6 @@ jobs:
       - name: Compile no_numrow
         run: qmk compile -kb skatyl -km no_numrow
 
-      - name: Compile numrow
-        run: qmk compile -kb skatyl -km numrow
-
       - name: Collect firmware files
         run: |
           mkdir firmware
