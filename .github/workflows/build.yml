@@ -43,7 +43,8 @@ jobs:
             lib/chibios \
             lib/chibios-contrib \
             lib/printf \
-            lib/pico-sdk
+            lib/pico-sdk \
+            lib/lufa
 
       - name: Install QMK CLI and Python dependencies
         run: |
