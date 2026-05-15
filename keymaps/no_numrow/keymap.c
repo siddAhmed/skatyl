@@ -73,11 +73,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   [3] = LAYOUT(
   //---------------------------------------------------------------------------------------       ----------------------------------------------------------------------------------
-    TD(DANCE_54),   KC_MS_WH_LEFT,  KC_MS_UP,       KC_MS_WH_RIGHT, TD(DANCE_55),           KC_WBAK,        LCTL(LSFT(KC_TAB)),   RCTL(KC_TAB),         KC_WFWD,        KC_TRNS,
+    TD(DANCE_54),   MS_WHLL,        MS_UP,          MS_WHLR,        TD(DANCE_55),           KC_WBAK,        LCTL(LSFT(KC_TAB)),   RCTL(KC_TAB),         KC_WFWD,        KC_TRNS,
   //---------------------------------------------------------------------------------------       ----------------------------------------------------------------------------------
-	TD(DANCE_56),   KC_MS_LEFT,     KC_MS_DOWN,     KC_MS_RIGHT,    MT(MOD_LGUI,KC_DEL),    TD(DANCE_60),   MT(MOD_RGUI,KC_DOWN), MT(MOD_RALT,KC_UP),   TD(DANCE_63),   KC_ENTER,
+	TD(DANCE_56),   MS_LEFT,        MS_DOWN,        MS_RIGHT,       MT(MOD_LGUI,KC_DEL),    TD(DANCE_60),   MT(MOD_RGUI,KC_DOWN), MT(MOD_RALT,KC_UP),   TD(DANCE_63),   KC_ENTER,
   //---------------------------------------------------------------------------------------       ----------------------------------------------------------------------------------
-    TD(DANCE_58),   KC_MS_BTN2,     KC_MS_WH_UP,    KC_MS_WH_DOWN,  KC_TRNS,         KC_MS_BTN1,     KC_MS_ACCEL0,         KC_MS_ACCEL1,         KC_MS_ACCEL2,   KC_NO,
+    TD(DANCE_58),   MS_BTN2,        MS_WHLU,        MS_WHLD,        KC_TRNS,         MS_BTN1,        MS_ACL0,              MS_ACL1,              MS_ACL2,        KC_NO,
   //---------------------------------------------------------------------------------------       ----------------------------------------------------------------------------------
                                     KC_BSPC,        TO(0),          KC_LGUI,                 KC_RALT,        TO(1),                KC_ENTER
                         // KC_BSPC, TO(0),   KC_TRNS,                                   TO(1) ,KC_ENTER
@@ -331,7 +331,7 @@ void dance_32_finished(tap_dance_state_t *state, void *user_data) {
     dance_state.step = dance_32_dance_step(state);
     switch (dance_state.step) {
         case SINGLE_TAP: register_code16(KC_QUOTE); break;
-        case SINGLE_HOLD: register_code16(LGUI(KC_PERIOD)); break;
+        case SINGLE_HOLD: register_code16(LGUI(KC_DOT)); break;
         case DOUBLE_TAP: register_code16(KC_GRAVE); break;
         case DOUBLE_SINGLE_TAP: tap_code16(KC_QUOTE); register_code16(KC_QUOTE);
     }
@@ -341,7 +341,7 @@ void dance_32_reset(tap_dance_state_t *state, void *user_data) {
     wait_ms(10);
     switch (dance_state.step) {
         case SINGLE_TAP: unregister_code16(KC_QUOTE); break;
-        case SINGLE_HOLD: unregister_code16(LGUI(KC_PERIOD)); break;
+        case SINGLE_HOLD: unregister_code16(LGUI(KC_DOT)); break;
         case DOUBLE_TAP: unregister_code16(KC_GRAVE); break;
         case DOUBLE_SINGLE_TAP: unregister_code16(KC_QUOTE); break;
     }
