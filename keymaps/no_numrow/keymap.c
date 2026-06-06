@@ -66,7 +66,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //---------------------------------------------------------------------------------------       ----------------------------------------------------------------------------------
     KC_TAB,  KC_TRNS, KC_AUDIO_VOL_DOWN,KC_AUDIO_VOL_UP,LSFT(KC_EQL),   KC_EQL,   KC_4, KC_5, KC_6,   KC_ENTER,
   //---------------------------------------------------------------------------------------       ----------------------------------------------------------------------------------
-    QK_BOOTLOADER,   KC_KP_ASTERISK, KC_BRIGHTNESS_DOWN,KC_BRIGHTNESS_UP,KC_KP_DOT,   KC_0,   KC_1, KC_2, KC_3,   TO(4),
+    QK_BOOTLOADER,   KC_KP_ASTERISK, KC_BRIGHTNESS_DOWN,KC_BRIGHTNESS_UP,KC_KP_DOT,   KC_0,   KC_1, KC_2, KC_3,   QK_BOOTLOADER,
   //---------------------------------------------------------------------------------------       ----------------------------------------------------------------------------------
 	  KC_BSPC, TO(0), KC_LGUI,KC_RALT ,TO(2) ,KC_ENTER
   ),
@@ -77,7 +77,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //---------------------------------------------------------------------------------------       ----------------------------------------------------------------------------------
 	TD(DANCE_56),   MS_LEFT,        MS_DOWN,        MS_RGHT,        MT(MOD_LGUI,KC_DEL),    TD(DANCE_60),   MT(MOD_RGUI,KC_DOWN), MT(MOD_RALT,KC_UP),   TD(DANCE_63),   KC_ENTER,
   //---------------------------------------------------------------------------------------       ----------------------------------------------------------------------------------
-    TD(DANCE_58),   MS_BTN2,        MS_WHLU,        MS_WHLD,        KC_TRNS,         MS_BTN1,        MS_ACL0,              MS_ACL1,              MS_ACL2,        KC_NO,
+    TD(DANCE_58),   MS_BTN2,        MS_WHLU,        MS_WHLD,        KC_TRNS,         MS_BTN1,        MS_ACL0,              MS_ACL1,              MS_ACL2,        TO(4),
   //---------------------------------------------------------------------------------------       ----------------------------------------------------------------------------------
                                     KC_BSPC,        TO(0),          KC_LGUI,                 KC_RALT,        TO(1),                KC_ENTER
                         // KC_BSPC, TO(0),   KC_TRNS,                                   TO(1) ,KC_ENTER
