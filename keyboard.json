@@ -1,7 +1,7 @@
 {
     "keyboard_name": "skatyl",
     "manufacturer": "siddahmed",
-    "url": "",
+    "url": "https://github.com/siddahmed/skatyl",
     "maintainer": "siddahmed",
     "usb": {
         "vid": "0x444D",

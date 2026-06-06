@@ -2,8 +2,8 @@
 #   change yes to no to disable
 
 # Platform configuration
-# MCU = RP2040
-# BOOTLOADER = rp2040
+MCU = RP2040
+BOOTLOADER = rp2040
 
 SERIAL_DRIVER = vendor
 
